@@ -10,7 +10,5 @@ if [[ -n "$RCLONE_CONF" ]]; then
   echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
 fi
 
-OUTPUT=$(sh -c "rclone $*")
-echo "$OUTPUT"
+exec rclone "$@"
 
-echo "::set-output name=rclone_output::$OUTPUT"
