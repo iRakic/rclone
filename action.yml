@@ -9,10 +9,18 @@ inputs:
   rclone_conf:
     description: 'RClone configuration content'
     required: false
+  args:
+    description: 'Arguments to pass to the RClone command'
+    required: true
+
+outputs:
+  rclone_output:
+    description: 'The output of the RClone command'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    RCLONE_CONF: ${{ inputs.rclone_conf }}
   args:
-    - ${{ inputs.rclone_conf }}
-    - ${{ github.event.inputs }}
+    - ${{ inputs.args }}
