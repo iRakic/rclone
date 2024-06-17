@@ -8,5 +8,4 @@ if [[ -n "$RCLONE_CONF" ]]; then
   echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
 fi
 
-sh -c "rclone $*" >> $GITHUB_OUTPUT
-
+sh -c "rclone $*"
