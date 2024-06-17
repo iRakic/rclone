@@ -14,12 +14,6 @@ if [[ -n "$RCLONE_CONF" ]]; then
   echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
 fi
 
-# Check if rclone command is provided
-if [[ -z "$*" ]]; then
-  echo "::error::No rclone command provided."
-  exit 1
-fi
-
 output=$(sh -c "rclone $*" 2>&1  >> $GITHUB_OUTPUT) 
 exit_code=$?
 
