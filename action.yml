@@ -13,6 +13,10 @@ inputs:
     description: 'Arguments to pass to the RClone command'
     required: true
 
+outputs:
+  rclone_output:
+    description: 'The output of the RClone command'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'

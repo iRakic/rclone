@@ -12,3 +12,5 @@ fi
 
 OUTPUT=$(sh -c "rclone $*")
 echo "$OUTPUT"
+
+echo "::set-output name=rclone_output::$OUTPUT"
