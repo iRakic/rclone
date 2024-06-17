@@ -20,11 +20,8 @@ if [[ -z "$*" ]]; then
   exit 1
 fi
 
-# Execute rclone command
-log "Executing rclone command..."
-output=$(sh -c "rclone $*" 2>&1)
+output=$(sh -c "rclone $*" 2>&1  >> $GITHUB_OUTPUT) 
 exit_code=$?
-echo "$output" >> $GITHUB_OUTPUT
 
 if [[ $exit_code -ne 0 ]]; then
   echo "::error::Rclone command failed with exit code $exit_code." >> $GITHUB_OUTPUT
