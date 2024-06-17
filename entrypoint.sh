@@ -29,3 +29,5 @@ if [[ $exit_code -ne 0 ]]; then
 fi
 
 log "Rclone command finished successfully." >> $GITHUB_OUTPUT
+
+exit 0
