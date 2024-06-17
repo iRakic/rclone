@@ -10,6 +10,7 @@ if [[ -n "$RCLONE_CONF" ]]; then
   echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
 fi
 
-rclone "$@" | tee /dev/tty
+rclone "$@"
+
 
 
