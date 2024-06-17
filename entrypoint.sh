@@ -4,7 +4,7 @@ set -e
 
 # Log function for better readability and debugging
 log() {
-  echo "::debug::$1"
+  echo "::debug::$1" >> $GITHUB_OUTPUT
 }
 
 # Ensure the RCLONE_CONF environment variable is set
@@ -31,4 +31,4 @@ if [[ $exit_code -ne 0 ]]; then
   exit $exit_code
 fi
 
-log "Rclone command finished successfully."
+log "Rclone command finished successfully." 
