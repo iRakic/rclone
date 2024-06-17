@@ -8,13 +8,13 @@ branding:
 inputs:
   rclone_conf:
     description: 'RClone configuration content'
-    required: true
-  command:
-    description: 'Command to pass to rclone'
+    required: false
+  args:
+    description: 'Arguments to pass to the RClone command'
     required: true
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.command }}
+    - ${{ inputs.args }}
