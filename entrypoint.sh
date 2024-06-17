@@ -22,5 +22,13 @@ fi
 
 # Execute rclone command
 log "Executing rclone command..."
-sh -c "rclone $*"
+output=$(sh -c "rclone $*" 2>&1)
+exit_code=$?
+echo "$output"
+
+if [[ $exit_code -ne 0 ]]; then
+  echo "::error::Rclone command failed with exit code $exit_code."
+  exit $exit_code
+fi
+
 log "Rclone command finished successfully."
