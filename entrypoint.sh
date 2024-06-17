@@ -22,5 +22,5 @@ fi
 
 # Execute rclone command
 log "Executing rclone command..."
-rclone "$@"
+sh -c "rclone $*"
 log "Rclone command finished successfully."
