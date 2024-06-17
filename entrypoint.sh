@@ -2,6 +2,9 @@
 
 set -e
 
+echo "### Starting RClone :rocket:" >> $GITHUB_STEP_SUMMARY
+
+
 # Log function for better readability and debugging
 log() {
   echo "::debug::$1" >> $GITHUB_OUTPUT
