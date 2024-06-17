@@ -1,0 +1,18 @@
+name: 'RClone GitHub Action'
+description: 'A GitHub Action that wraps the RClone CLI, allowing you to easily integrate RClone commands into your CI/CD workflows.'
+author: 'Ivan Rakic'
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
+
+inputs:
+  rclone_conf:
+    description: 'RClone configuration content'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.rclone_conf }}
+    - ${{ github.event.inputs }}
