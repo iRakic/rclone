@@ -22,5 +22,5 @@ runs:
   image: 'Dockerfile'
   env:
     RCLONE_CONF: ${{ inputs.rclone_conf }}
-  command:
-    - ${{ inputs.args }}
+  args:
+    - ${{ inputs.command }}
