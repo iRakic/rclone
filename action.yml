@@ -8,8 +8,8 @@ branding:
 inputs:
   rclone_conf:
     description: 'RClone configuration content'
-    required: false
-  args:
+    required: true
+  command:
     description: 'Arguments to pass to the RClone command'
     required: true
 
@@ -23,4 +23,4 @@ runs:
   env:
     RCLONE_CONF: ${{ inputs.rclone_conf }}
   args:
-    - ${{ inputs.args }}
+    - ${{ inputs.command }}
