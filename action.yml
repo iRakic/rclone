@@ -8,7 +8,7 @@ branding:
 inputs:
   rclone_conf:
     description: 'RClone configuration content'
-    required: false
+    required: true
   args:
     description: 'Arguments to pass to the RClone command'
     required: true
